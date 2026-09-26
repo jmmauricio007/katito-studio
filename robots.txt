@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://katitostudio.com/sitemap.xml
+Sitemap: https://www.katitostudio.com/sitemap.xml
