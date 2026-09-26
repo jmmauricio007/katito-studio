@@ -51,7 +51,8 @@ nav a:hover{color:var(--rose)}
 .other-services p{font-size:.8rem;color:#cfc5bf}
 .other-services>a{color:var(--gold);font-weight:700;font-size:.9rem}
 .experience{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--ink);color:white}
-.experience-image img{width:100%;height:100%;object-fit:cover}
+.experience-image{display:grid;place-items:center;overflow:hidden;background:#f7ede8}
+.experience-image img{width:100%;height:100%;object-fit:contain}
 .experience-copy{align-self:center;padding:70px clamp(34px,8vw,120px)}
 .experience-copy p:not(.eyebrow){color:#d9d0ca}
 .experience-copy ul{padding:0;list-style:none}
