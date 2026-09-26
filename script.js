@@ -37,7 +37,7 @@ function refreshTimes(){
   const selected = services[Number(serviceSelect.value)];
   const duration = selected?.duration || 60;
   timeSelect.innerHTML = '<option value="">Selecciona</option>';
-  for(let minutes=600; minutes+duration<=1140; minutes+=30){
+  for(let minutes=480; minutes+duration<=1080; minutes+=30){
     const hour = String(Math.floor(minutes/60)).padStart(2,'0');
     const min = String(minutes%60).padStart(2,'0');
     timeSelect.insertAdjacentHTML('beforeend', `<option>${hour}:${min}</option>`);
