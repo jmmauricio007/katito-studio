@@ -1,9 +1,9 @@
 const facialServices = [
   {name:'Katito Express', price:15, duration:35, time:'30–35 min', detail:'Limpieza, tónico, espátula ultrasónica, hidratación y protector solar.'},
-  {name:'Katito Deep Clean', price:25, duration:60, time:'Duración por confirmar', detail:'Limpieza facial profunda para poros obstruidos, puntos negros, exceso de grasa o impurezas.', image:'assets/deep-clean-card.webp'},
-  {name:'Katito Hydra', price:30, duration:60, time:'Duración por confirmar', detail:'Facial hidratante para piel seca, deshidratada u opaca; ayuda a recuperar suavidad y luminosidad.', image:'assets/hydra-card.webp'},
-  {name:'Katito Glow', price:35, duration:60, time:'Duración por confirmar', detail:'Facial con FotoLED para una piel más luminosa, uniforme, calmada y revitalizada.', image:'assets/glow-card.webp'},
-  {name:'Katito Firm', price:40, duration:60, time:'Duración por confirmar', detail:'Facial reafirmante con radiofrecuencia y fototerapia LED para estimular el colágeno y mejorar la firmeza.', image:'assets/firm-card.webp'}
+  {name:'Katito Deep Clean', price:25, duration:60, time:'60 min', detail:'Limpieza facial profunda para poros obstruidos, puntos negros, exceso de grasa o impurezas.', image:'assets/deep-clean-card.webp'},
+  {name:'Katito Hydra', price:30, duration:60, time:'60 min', detail:'Facial hidratante para piel seca, deshidratada u opaca; ayuda a recuperar suavidad y luminosidad.', image:'assets/hydra-card.webp'},
+  {name:'Katito Glow', price:35, duration:75, time:'75 min', detail:'Facial con FotoLED para una piel más luminosa, uniforme, calmada y revitalizada.', image:'assets/glow-card.webp'},
+  {name:'Katito Firm', price:40, duration:90, time:'90 min', detail:'Facial reafirmante con radiofrecuencia y fototerapia LED para estimular el colágeno y mejorar la firmeza.', image:'assets/firm-card.webp'}
 ];
 
 const additionalServices = [
@@ -20,7 +20,7 @@ const dateInput = document.querySelector('#date');
 
 facialServices.forEach((service, index) => {
   if(service.image){
-    grid.insertAdjacentHTML('beforeend', `<article class="service-card service-card--image"><img src="${service.image}" alt="${service.name} · tratamiento facial $${service.price}" width="1024" height="1536" loading="lazy"><button type="button" data-index="${index}" aria-label="Reservar ${service.name}">Reservar ${service.name} →</button></article>`);
+    grid.insertAdjacentHTML('beforeend', `<article class="service-card service-card--image"><img src="${service.image}" alt="${service.name} · tratamiento facial $${service.price}" width="1024" height="1536" loading="lazy"><div class="service-card-action"><span>⏱ ${service.time}</span><button type="button" data-index="${index}" aria-label="Reservar ${service.name}">Reservar →</button></div></article>`);
   }else{
     grid.insertAdjacentHTML('beforeend', `<article class="service-card service-card--express"><div class="service-top"><h3>${service.name}</h3><span class="service-price">$${service.price}</span></div><p>${service.detail}</p><div class="service-meta"><span>${service.time}</span><button type="button" data-index="${index}">Reservar →</button></div></article>`);
   }
