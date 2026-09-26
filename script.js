@@ -1,22 +1,28 @@
-const services = [
+const facialServices = [
   {name:'Katito Express', price:15, duration:35, time:'30–35 min', detail:'Limpieza, tónico, espátula ultrasónica, hidratación y protector solar.'},
-  {name:'Katito Clean', price:22, duration:55, time:'45–55 min', detail:'Limpieza profunda, exfoliación, espátula ultrasónica, mascarilla, hidratación y protector solar.'},
-  {name:'Katito Purify', price:25, duration:60, time:'50–60 min', detail:'Limpieza, exfoliación, alta frecuencia, mascarilla de arcilla, Oil Control y protector solar.'},
-  {name:'Katito HydraGlow', price:25, duration:60, time:'50–60 min', detail:'Exfoliación suave, ácido hialurónico, Collagen Booster, FotoLED y protector solar.'},
-  {name:'Katito FotoLED', price:20, duration:45, time:'40–45 min', detail:'Limpieza, espátula ultrasónica, FotoLED, ácido hialurónico, hidratación y protector solar.'},
-  {name:'Katito Premium', price:35, duration:75, time:'60–75 min', detail:'Exfoliación, alta frecuencia, ácido hialurónico, FotoLED, Collagen Booster y SPF 50+.'},
-  {name:'Katito Men', price:22, duration:50, time:'45–50 min', detail:'Limpieza, exfoliación suave, espátula, mascarilla, Oil Control, hidratación y protector solar.'},
+  {name:'Katito Deep Clean', price:25, duration:60, time:'Duración por confirmar', detail:'Limpieza facial profunda para poros obstruidos, puntos negros, exceso de grasa o impurezas.'},
+  {name:'Katito Hydra', price:30, duration:60, time:'Duración por confirmar', detail:'Facial hidratante para piel seca, deshidratada u opaca; ayuda a recuperar suavidad y luminosidad.'},
+  {name:'Katito Glow', price:35, duration:60, time:'Duración por confirmar', detail:'Facial con FotoLED para una piel más luminosa, uniforme, calmada y revitalizada.'},
+  {name:'Katito Firm', price:40, duration:60, time:'Duración por confirmar', detail:'Facial reafirmante con radiofrecuencia y fototerapia LED para estimular el colágeno y mejorar la firmeza.'}
+];
+
+const additionalServices = [
   {name:'Pestañas por punto', price:12, duration:60, time:'Duración por confirmar', detail:'Aplicación personalizada para realzar y definir la mirada.'},
   {name:'Laminado de cejas', price:10, duration:60, time:'Duración por confirmar', detail:'Cejas definidas, ordenadas y con un efecto natural.'}
 ];
+
+const services = [...facialServices, ...additionalServices];
 
 const grid = document.querySelector('#serviceGrid');
 const serviceSelect = document.querySelector('#service');
 const timeSelect = document.querySelector('#time');
 const dateInput = document.querySelector('#date');
 
-services.forEach((service, index) => {
+facialServices.forEach((service, index) => {
   grid.insertAdjacentHTML('beforeend', `<article class="service-card"><div class="service-top"><h3>${service.name}</h3><span class="service-price">$${service.price}</span></div><p>${service.detail}</p><div class="service-meta"><span>${service.time}</span><button type="button" data-index="${index}">Reservar →</button></div></article>`);
+});
+
+services.forEach((service, index) => {
   serviceSelect.insertAdjacentHTML('beforeend', `<option value="${index}">${service.name} · $${service.price} · ${service.time}</option>`);
 });
 
