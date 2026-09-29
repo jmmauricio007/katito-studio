@@ -18,14 +18,6 @@ const serviceSelect = document.querySelector('#service');
 const timeSelect = document.querySelector('#time');
 const dateInput = document.querySelector('#date');
 
-facialServices.forEach((service, index) => {
-  if(service.image){
-    grid.insertAdjacentHTML('beforeend', `<article class="service-card service-card--image"><img src="${service.image}" alt="${service.name} · tratamiento facial $${service.price}" width="1024" height="1536" loading="lazy"><div class="service-card-action"><span>⏱ ${service.time}</span><button type="button" data-index="${index}" aria-label="Reservar ${service.name}">Reservar →</button></div></article>`);
-  }else{
-    grid.insertAdjacentHTML('beforeend', `<article class="service-card service-card--express"><div class="service-top"><h3>${service.name}</h3><span class="service-price">$${service.price}</span></div><p>${service.detail}</p><div class="service-meta"><span>${service.time}</span><button type="button" data-index="${index}">Reservar →</button></div></article>`);
-  }
-});
-
 services.forEach((service, index) => {
   serviceSelect.insertAdjacentHTML('beforeend', `<option value="${index}">${service.name} · $${service.price} · ${service.time}</option>`);
 });
